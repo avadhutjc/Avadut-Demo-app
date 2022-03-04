@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/Avadut-Demo-app.iml" filepath="$PROJECT_DIR$/.idea/Avadut-Demo-app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Avadhut-Demo-app.iml" filepath="$PROJECT_DIR$/.idea/modules/Avadhut-Demo-app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Avadhut-Demo-app.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Avadhut-Demo-app.app.iml" />
     </modules>
   </component>
 </project>
