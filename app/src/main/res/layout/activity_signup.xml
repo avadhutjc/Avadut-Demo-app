@@ -3,9 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/lattice_innovation"
     android:focusableInTouchMode="true"
-    android:background="@drawable/good_morning_img"
-    tools:context=".ui.MainActivity">
+    tools:context=".ui.SignUpActivity">
 
     <FrameLayout
         android:layout_width="wrap_content"
@@ -15,6 +15,7 @@
             android:id="@+id/imageView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:contentDescription="@string/todo"
             android:scaleType="centerCrop" />
     </FrameLayout>
 
@@ -29,16 +30,23 @@
 
         <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/poppins_light"
-                android:text="Lattice "
-                android:textColor="#ffffff"
+                android:text="@string/lattice"
+                android:textColor="@color/black"
                 android:textSize="32sp" />
 
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginEnd="4dp"
+                android:background="#deff00" />
         </LinearLayout>
 
         <LinearLayout
@@ -51,8 +59,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/poppins_light"
-                android:text="Innovations"
-                android:textColor="#ffffff"
+                android:text="@string/innovations"
+                android:textColor="@color/black"
                 android:textSize="32sp" />
 
             <View
@@ -61,8 +69,6 @@
                 android:layout_marginTop="2dp"
                 android:background="#deff00" />
         </LinearLayout>
-
-
     </LinearLayout>
 
     <TextView
@@ -73,79 +79,58 @@
         android:layout_marginTop="4dp"
         android:fontFamily="@font/poppins_light"
         android:gravity="center"
-        android:text="Medical technology company"
-        android:textColor="#9affffff"
+        android:text="@string/technology_company"
+        android:textColor="@color/black"
         android:textSize="14sp"
         tools:ignore="SmallSp" />
-
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="32dp"
+        android:layout_marginBottom="170dp"
         android:orientation="vertical"
         android:paddingLeft="32dp"
         android:paddingRight="32dp">
 
-
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColorHint="#96ffffff"
-            android:theme="@style/EditScreenTextInputLayoutStyle">
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColorHint="#96ffffff"
+            android:textColorHint="@color/black"
             android:theme="@style/EditScreenTextInputLayoutStyle">
 
             <EditText
                 android:id="@+id/emailEtRegister"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:autofillHints="Email Text"
                 android:drawablePadding="16dp"
                 android:fontFamily="@font/roboto_bold"
-                android:hint="Email"
+                android:hint="@string/email"
                 android:inputType="textEmailAddress"
                 android:maxLines="1"
-                android:textColor="@android:color/white"
+                android:textColor="@color/black"
                 android:textSize="16sp" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColorHint="#96ffffff"
-            android:theme="@style/EditScreenTextInputLayoutStyle">
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColorHint="#96ffffff"
-            android:theme="@style/EditScreenTextInputLayoutStyle">
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColorHint="#96ffffff"
+            android:textColorHint="@color/black"
             android:theme="@style/EditScreenTextInputLayoutStyle">
 
             <EditText
                 android:id="@+id/passwordEt"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:autofillHints="Password Text"
                 android:drawablePadding="16dp"
                 android:fontFamily="@font/roboto_bold"
-                android:hint="Password"
+                android:hint="@string/password"
                 android:inputType="textPassword"
                 android:maxLines="1"
-                android:textColor="@android:color/white"
+                android:textColor="@color/black"
                 android:textSize="16sp" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -161,40 +146,26 @@
                 android:id="@+id/signUpBtn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="16dp"
+                android:layout_gravity="center"
                 android:background="@drawable/buttonshapewhitebg"
                 android:fontFamily="@font/poppins_light"
-                android:text="Sign up"
+                android:gravity="center"
+                android:text="@string/sign_up"
                 android:textAllCaps="false"
-                android:textColor="#96ffffff"
-                android:textSize="16sp"
-                android:textStyle="bold" />
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:background="@drawable/buttonshapewhitebg"
-                android:fontFamily="@font/poppins_light"
-                android:text="Sign in"
-                android:visibility="gone"
-                android:textAllCaps="false"
-                android:textColor="#96ffffff"
+                android:textColor="@color/black"
                 android:textSize="16sp"
                 android:textStyle="bold" />
         </LinearLayout>
-
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:fontFamily="@font/roboto_mono_thin"
-            android:text="Forgot Password?"
+            android:text="@string/forgot_password"
             android:textAlignment="center"
-            android:textColor="#96ffffff"
-            android:textSize="16sp" />
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="italic" />
     </LinearLayout>
-
-
 </RelativeLayout>
