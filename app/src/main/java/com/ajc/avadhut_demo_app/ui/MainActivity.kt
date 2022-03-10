@@ -34,7 +34,7 @@ class MainActivity : AppCompatActivity() {
                     if (user?.email?.isNotEmpty()) {
                         runOnUiThread {
 
-                            val intent = Intent(this@MainActivity, AfterLogin::class.java)
+                            val intent = Intent(this@MainActivity, ChooseTask::class.java)
                             startActivity(intent)
                             Toast.makeText(this@MainActivity, "success", Toast.LENGTH_SHORT).show()
                         }
