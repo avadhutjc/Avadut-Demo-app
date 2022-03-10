@@ -16,9 +16,8 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 class SignUpActivity : AppCompatActivity() {
-
     lateinit var database: LoginDatabase
-    lateinit var dao: LoginDAO //creating dao obj
+    lateinit var dao: LoginDAO
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,53 +28,21 @@ class SignUpActivity : AppCompatActivity() {
 
         signUpBtn.setOnClickListener {
             val signUpData = LoginEntity(
-                // nameEt.text.toString(),
                 emailEtRegister.text.toString(),
                 passwordEt.text.toString()
-                //  ageEt.text.toString().toInt(),
-                // mobileEt.text.toString().toInt(),
             )
 
             CoroutineScope(Dispatchers.IO).launch {
                 dao.register(signUpData)
-                //  finish()
-
-                if (emailEtRegister.text.toString() == null) {
-                    runOnUiThread {
-                        val intent = Intent(this@SignUpActivity, MainActivity::class.java)
-                        startActivity(intent)
-                        Toast.makeText(
-                            this@SignUpActivity,
-                            "Successfully Account Created Now Login Here",
-                            Toast.LENGTH_SHORT
-                        ).show()
-                    }
-                } else {
-                    runOnUiThread {
-                        val msg = "Required Email and Password For Sign-Up"
-                        val toast = Toast.makeText(applicationContext, msg, Toast.LENGTH_SHORT)
-                        toast.show()
-                        val handler = Handler()
-                        handler.postDelayed(Runnable { toast.cancel() }, 3000)
-                    }
-                }
             }
-        }
 
-//            val intent = Intent(this@RegisterActivity, MainActivity::class.java)
-//            startActivity(intent)
-//            // Toast.makeText(this@RegisterActivity, Toast.LENGTH_SHORT).show()
-//            val msg = "Successfully Sign-Up Now Login Here"
-//            val toast = Toast.makeText(applicationContext, msg, Toast.LENGTH_SHORT)
-//            toast.show()
-//            val handler = Handler()
-//            handler.postDelayed(Runnable { toast.cancel() }, 2000)
+            val intent = Intent(this@SignUpActivity, MainActivity::class.java)
+            startActivity(intent)
+            val msg = "Successfully Sign-Up Now Login Here"
+            val toast = Toast.makeText(applicationContext, msg, Toast.LENGTH_SHORT)
+            toast.show()
+            val handler = Handler()
+            handler.postDelayed(Runnable { toast.cancel() }, 2000)
+        }
     }
 }
-/*
-//            val msg = "Successfully Sign-Up Now Login Here"
-//            val toast = Toast.makeText(applicationContext, msg, Toast.LENGTH_SHORT)
-//            toast.show()
-//            val handler = Handler()
-//            handler.postDelayed(Runnable { toast.cancel() }, 2000)
- */
